@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shop_metadata",
+  "info": {
+    "displayName": "Metadata",
+    "icon": "audio-description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "description": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    }
+  }
+}
