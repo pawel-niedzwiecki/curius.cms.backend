@@ -52,6 +52,12 @@
         }
       },
       "type": "datetime"
+    },
+    "medusa_products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::medusa-product.medusa-product",
+      "mappedBy": "medusa_tags"
     }
   }
 }

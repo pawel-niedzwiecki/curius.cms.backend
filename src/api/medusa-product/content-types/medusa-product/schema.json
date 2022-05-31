@@ -1,0 +1,150 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medusa_products",
+  "info": {
+    "singularName": "medusa-product",
+    "pluralName": "medusa-products",
+    "displayName": "Medusa product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "medusa_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "required": true
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
+    },
+    "handle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa-shop.metadata-seo-and-social-media",
+      "required": true
+    },
+    "is_giftcard": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "thumbnail": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-image.medusa-image",
+      "inversedBy": "medusa_product_thumbnail"
+    },
+    "medusa_profile_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid"
+    },
+    "Stock_and_inventory": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa-shop.product-stock-and-inventory"
+    },
+    "medusa_images": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-image.medusa-image",
+      "mappedBy": "medusa_product_images"
+    },
+    "medusa_collection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-collection.medusa-collection",
+      "inversedBy": "medusa_products"
+    },
+    "medusa_product_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-product-type.medusa-product-type",
+      "inversedBy": "medusa_products"
+    },
+    "medusa_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::medusa-tag.medusa-tag",
+      "inversedBy": "medusa_products"
+    },
+    "medusa_product_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product-option.medusa-product-option",
+      "mappedBy": "medusa_product"
+    },
+    "discountable": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "deleted_at": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime"
+    }
+  }
+}

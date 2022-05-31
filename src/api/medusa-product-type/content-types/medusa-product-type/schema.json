@@ -23,6 +23,12 @@
     },
     "deleted_at": {
       "type": "datetime"
+    },
+    "medusa_products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product.medusa-product",
+      "mappedBy": "medusa_product_type"
     }
   }
 }
