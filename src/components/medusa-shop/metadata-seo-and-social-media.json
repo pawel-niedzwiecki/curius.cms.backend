@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_medusa_shop_metadata_seo_and_social_medias",
+  "info": {
+    "displayName": "metadata seo & social media",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

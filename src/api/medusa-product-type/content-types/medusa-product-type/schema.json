@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medusa_product_types",
+  "info": {
+    "singularName": "medusa-product-type",
+    "pluralName": "medusa-product-types",
+    "displayName": "Medusa product type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "medusa_id": {
+      "type": "uid",
+      "required": true
+    },
+    "deleted_at": {
+      "type": "datetime"
+    }
+  }
+}
