@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_medusa_product_tags",
+  "info": {
+    "displayName": "Product tags",
+    "icon": "times"
+  },
+  "options": {},
+  "attributes": {
+    "medusa_tag": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::medusa-tag.medusa-tag"
+    }
+  }
+}

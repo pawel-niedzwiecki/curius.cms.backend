@@ -53,17 +53,6 @@
       "targetField": "title",
       "required": true
     },
-    "metadata": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "medusa-shop.metadata-seo-and-social-media",
-      "required": true
-    },
     "is_giftcard": {
       "pluginOptions": {
         "i18n": {
@@ -74,12 +63,6 @@
       "default": false,
       "required": true
     },
-    "thumbnail": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::medusa-image.medusa-image",
-      "inversedBy": "medusa_product_thumbnail"
-    },
     "medusa_profile_id": {
       "pluginOptions": {
         "i18n": {
@@ -87,28 +70,6 @@
         }
       },
       "type": "uid"
-    },
-    "Stock_and_inventory": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "medusa-shop.product-stock-and-inventory"
-    },
-    "medusa_images": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::medusa-image.medusa-image",
-      "mappedBy": "medusa_product_images"
-    },
-    "medusa_collection": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::medusa-collection.medusa-collection",
-      "inversedBy": "medusa_products"
     },
     "medusa_product_type": {
       "type": "relation",
@@ -145,6 +106,39 @@
         }
       },
       "type": "datetime"
+    },
+    "collection": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa.product-collection",
+      "required": true
+    },
+    "type": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa.product-type",
+      "required": true
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa.product-tags",
+      "required": false
     }
   }
 }

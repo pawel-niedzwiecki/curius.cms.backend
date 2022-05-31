@@ -1,9 +1,8 @@
 {
-  "collectionName": "components_medusa_shop_product_stock_and_inventories",
+  "collectionName": "components_medusa_product_stock_and_inventories",
   "info": {
-    "displayName": "Product Stock & Inventory",
-    "icon": "balance-scale-right",
-    "description": ""
+    "displayName": "Product stock & inventory",
+    "icon": "balance-scale-right"
   },
   "options": {},
   "attributes": {
@@ -20,12 +19,10 @@
       "type": "integer"
     },
     "mid_code": {
-      "type": "string",
-      "unique": true
+      "type": "string"
     },
     "hs_code": {
-      "type": "string",
-      "unique": true
+      "type": "string"
     },
     "origin_country": {
       "type": "enumeration",

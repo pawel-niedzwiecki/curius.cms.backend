@@ -26,16 +26,6 @@
       "required": true,
       "unique": true
     },
-    "metadata": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "medusa-shop.metadata-seo-and-social-media"
-    },
     "medusa_id": {
       "pluginOptions": {
         "i18n": {

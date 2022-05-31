@@ -16,30 +16,12 @@
       "type": "uid",
       "required": true
     },
-    "metadata": {
-      "type": "component",
-      "repeatable": false,
-      "required": true,
-      "component": "medusa-shop.metadata-image"
-    },
     "medusa_id": {
       "type": "uid",
       "required": true
     },
     "deleted_at": {
       "type": "datetime"
-    },
-    "medusa_product_thumbnail": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::medusa-product.medusa-product",
-      "mappedBy": "thumbnail"
-    },
-    "medusa_product_images": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::medusa-product.medusa-product",
-      "inversedBy": "medusa_images"
     }
   }
 }

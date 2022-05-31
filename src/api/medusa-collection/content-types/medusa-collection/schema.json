@@ -38,16 +38,6 @@
         }
       }
     },
-    "metadata": {
-      "type": "component",
-      "repeatable": false,
-      "component": "medusa-shop.metadata-seo-and-social-media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "medusa_id": {
       "type": "uid",
       "required": true
@@ -59,12 +49,6 @@
           "localized": true
         }
       }
-    },
-    "medusa_products": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::medusa-product.medusa-product",
-      "mappedBy": "medusa_collection"
     }
   }
 }

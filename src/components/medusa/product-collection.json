@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_medusa_product_collections",
+  "info": {
+    "displayName": "Product collection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "medusa_collection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::medusa-collection.medusa-collection"
+    }
+  }
+}
