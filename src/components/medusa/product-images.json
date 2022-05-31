@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_medusa_product_images",
+  "info": {
+    "displayName": "Product images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "medusa_image": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::medusa-image.medusa-image"
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "medusa.metadata-image",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "component",
+      "repeatable": false,
+      "component": "medusa.product-thumbnail",
+      "required": true
+    }
+  }
+}

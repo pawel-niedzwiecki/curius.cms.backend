@@ -139,6 +139,17 @@
       },
       "component": "medusa.product-tags",
       "required": false
+    },
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "component": "medusa.product-images"
     }
   }
 }
