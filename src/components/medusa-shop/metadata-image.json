@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_medusa_shop_metadata_images",
+  "info": {
+    "displayName": "Metadata image",
+    "icon": "file-image"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "alt": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    }
+  }
+}
