@@ -1,22 +1,19 @@
 {
   "name": "strapi-iv-plugin-medusa",
   "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "description": "The plugin for strapi, thanks to him you can merge all function Strapi v4 shop medusajs.",
   "strapi": {
     "name": "strapi-iv-plugin-medusa",
-    "description": "Description of Strapi Iv Plugin Medusa plugin",
+    "description": "The plugin for strapi, thanks to him you can merge all function Strapi v4 shop medusajs.",
     "kind": "plugin",
-    "displayName": "Strapi Iv Plugin Medusa"
+    "displayName": "Strapi iv plugin medusa"
   },
   "dependencies": {},
   "author": {
-    "name": "A Strapi developer"
+    "name": "Paweł Niedźwiecki",
+    "url": "https://github.com/pawel-niedzwiecki"
   },
-  "maintainers": [
-    {
-      "name": "A Strapi developer"
-    }
-  ],
+  "maintainers": [],
   "engines": {
     "node": ">=12.x.x <=16.x.x",
     "npm": ">=6.0.0"

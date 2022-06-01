@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medusa_product_options",
+  "info": {
+    "singularName": "medusa-product-option",
+    "pluralName": "medusa-product-options",
+    "displayName": "Medusa product option"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "medusa_id": {
+      "type": "uid",
+      "required": true
+    },
+    "product_id": {
+      "type": "uid",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-product.medusa-product",
+      "inversedBy": "options"
+    }
+  }
+}

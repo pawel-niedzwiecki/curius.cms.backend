@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medusa_product_variants",
+  "info": {
+    "singularName": "medusa-product-variant",
+    "pluralName": "medusa-product-variants",
+    "displayName": "Medusa product variant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "medusa_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "required": true
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "deleted_at": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime",
+      "required": false
+    },
+    "prices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product-prices-variant.medusa-product-prices-variant",
+      "mappedBy": "medusa_product_variant"
+    },
+    "options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product-option-variant.medusa-product-option-variant",
+      "mappedBy": "medusa_product_variant"
+    },
+    "product_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-product.medusa-product",
+      "inversedBy": "variants"
+    },
+    "stock_and_inventory": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa.product-variant-stock-and-inventory",
+      "required": true
+    },
+    "dimensions": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa.product-variant-dimensions",
+      "required": true
+    },
+    "Customs": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa.product-variant-customs",
+      "required": true
+    }
+  }
+}

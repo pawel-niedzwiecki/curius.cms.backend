@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medusa_product_prices_variants",
+  "info": {
+    "singularName": "medusa-product-prices-variant",
+    "pluralName": "medusa-product-prices-variants",
+    "displayName": "Medusa product prices variant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "medusa_id": {
+      "type": "uid"
+    },
+    "medusa_currencies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-currencie.medusa-currencie"
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "deleted_at": {
+      "type": "datetime"
+    },
+    "medusa_product_variant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-product-variant.medusa-product-variant",
+      "inversedBy": "prices"
+    }
+  }
+}

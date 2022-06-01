@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_medusa_product_variant_dimensions",
+  "info": {
+    "displayName": "Product variant dimensions"
+  },
+  "options": {},
+  "attributes": {
+    "weight": {
+      "type": "integer"
+    },
+    "length": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "width": {
+      "type": "integer"
+    }
+  }
+}

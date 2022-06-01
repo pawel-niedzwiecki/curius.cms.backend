@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_medusa_product_variant_stock_and_inventories",
+  "info": {
+    "displayName": "Product variant stock & inventory",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sku": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "ean": {
+      "type": "string"
+    },
+    "inventory_quantity": {
+      "type": "integer"
+    },
+    "allow_backorder": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "manage_inventory": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
