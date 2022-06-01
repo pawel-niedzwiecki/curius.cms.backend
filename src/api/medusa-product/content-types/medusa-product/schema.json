@@ -44,39 +44,6 @@
       },
       "type": "richtext"
     },
-    "collection": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "medusa.product-collection",
-      "required": true
-    },
-    "type": {
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "medusa.product-type",
-      "required": true
-    },
-    "tags": {
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "medusa.product-tags",
-      "required": true
-    },
     "discountable": {
       "pluginOptions": {
         "i18n": {
@@ -143,6 +110,36 @@
         }
       },
       "type": "datetime"
+    },
+    "option_variants_id": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product-option-variant.medusa-product-option-variant",
+      "mappedBy": "medusa_product_id"
+    },
+    "variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product-variant.medusa-product-variant",
+      "mappedBy": "product_id"
+    },
+    "collection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-collection.medusa-collection",
+      "inversedBy": "medusa_products"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-product-type.medusa-product-type",
+      "inversedBy": "products"
+    },
+    "options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product-option.medusa-product-option",
+      "mappedBy": "product"
     }
   }
 }

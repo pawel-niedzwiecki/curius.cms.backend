@@ -132,7 +132,8 @@
         "ZAR",
         "ZMW",
         "ZWL"
-      ]
+      ],
+      "required": true
     },
     "default": {
       "type": "boolean",

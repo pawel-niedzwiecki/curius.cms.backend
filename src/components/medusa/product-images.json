@@ -18,9 +18,8 @@
       "required": true
     },
     "thumbnail": {
-      "type": "component",
-      "repeatable": false,
-      "component": "medusa.product-thumbnail",
+      "type": "boolean",
+      "default": false,
       "required": true
     }
   }

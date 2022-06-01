@@ -22,6 +22,12 @@
     "title": {
       "type": "string",
       "required": true
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::medusa-product.medusa-product",
+      "inversedBy": "options"
     }
   }
 }
