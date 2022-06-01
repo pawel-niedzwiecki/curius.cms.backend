@@ -16,15 +16,6 @@
     }
   },
   "attributes": {
-    "medusa_id": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "uid",
-      "required": true
-    },
     "title": {
       "pluginOptions": {
         "i18n": {
@@ -34,14 +25,6 @@
       "type": "string",
       "required": true,
       "unique": true
-    },
-    "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext"
     },
     "handle": {
       "pluginOptions": {
@@ -53,59 +36,13 @@
       "targetField": "title",
       "required": true
     },
-    "is_giftcard": {
+    "description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
-    "medusa_profile_id": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "uid"
-    },
-    "medusa_product_type": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::medusa-product-type.medusa-product-type",
-      "inversedBy": "medusa_products"
-    },
-    "medusa_tags": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::medusa-tag.medusa-tag",
-      "inversedBy": "medusa_products"
-    },
-    "medusa_product_options": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::medusa-product-option.medusa-product-option",
-      "mappedBy": "medusa_product"
-    },
-    "discountable": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
-    "deleted_at": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "datetime"
+      "type": "richtext"
     },
     "collection": {
       "type": "component",
@@ -138,7 +75,17 @@
         }
       },
       "component": "medusa.product-tags",
-      "required": false
+      "required": true
+    },
+    "discountable": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
     },
     "images": {
       "type": "component",
@@ -150,6 +97,52 @@
       },
       "required": true,
       "component": "medusa.product-images"
+    },
+    "stock_and_inventory": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "medusa.product-stock-and-inventory",
+      "required": true
+    },
+    "is_giftcard": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "medusa_profile_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid"
+    },
+    "medusa_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "required": true
+    },
+    "deleted_at": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime"
     }
   }
 }
