@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "shopimages",
+  "collectionName": "shop_images",
   "info": {
-    "singularName": "shopimage",
-    "pluralName": "shopimages",
     "displayName": "Shop image",
-    "description": ""
+    "singularName": "shop-image",
+    "pluralName": "shop-images",
+    "tableName": "shop_images"
   },
   "options": {
     "draftAndPublish": false

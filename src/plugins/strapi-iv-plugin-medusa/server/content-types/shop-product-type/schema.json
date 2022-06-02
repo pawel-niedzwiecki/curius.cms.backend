@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "shopproducttypes",
+  "collectionName": "shop_product_types",
   "info": {
-    "singularName": "shopproducttype",
-    "pluralName": "shopproducttypes",
     "displayName": "Shop product type",
-    "description": ""
+    "singularName": "shop-product-type",
+    "pluralName": "shop-product-types",
+    "tableName": "shop_product_types"
   },
   "options": {
     "draftAndPublish": true
@@ -27,7 +27,7 @@
     "products": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::medusa-product.medusa-product",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product",
       "mappedBy": "type"
     }
   }

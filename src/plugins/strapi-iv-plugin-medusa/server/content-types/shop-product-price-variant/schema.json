@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "shopproductpricesvariants",
+  "collectionName": "shopproductpricevariants",
   "info": {
-    "singularName": "shopproductpricesvariant",
-    "pluralName": "shopproductpricesvariants",
-    "displayName": "Shop product prices variant",
-    "description": ""
+    "displayName": "Shop product price variant",
+    "singularName": "shop-product-price-variant",
+    "pluralName": "shop-product-price-variants",
+    "tableName": "shop_product_price_variants"
   },
   "options": {
     "draftAndPublish": false
@@ -18,7 +18,7 @@
     "medusa_currencies": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::medusa-currencie.medusa-currencie"
+      "target": "plugin::strapi-iv-plugin-medusa.shop-currencie"
     },
     "amount": {
       "type": "decimal",
@@ -30,7 +30,7 @@
     "medusa_product_variant": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::medusa-product-variant.medusa-product-variant",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product-variant",
       "inversedBy": "prices"
     }
   }

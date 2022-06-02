@@ -1,10 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "shopproductoptions",
+  "collectionName": "shop_product_options",
   "info": {
-    "singularName": "shopproductoption",
-    "pluralName": "shopproductoptions",
-    "displayName": "Shop product option"
+    "displayName": "Shop product option",
+    "singularName": "shop-product-option",
+    "pluralName": "shop-product-options",
+    "tableName": "shop_product_options"
   },
   "options": {
     "draftAndPublish": false
@@ -26,7 +27,7 @@
     "product": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::medusa-product.medusa-product",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product",
       "inversedBy": "options"
     }
   }

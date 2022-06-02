@@ -1,11 +1,13 @@
 {
   "kind": "collectionType",
-  "collectionName": "shopproductoptionvariants",
+  "collectionName": "shop_product_option_variants",
   "info": {
-    "singularName": "shopproductoptionvariant",
-    "pluralName": "shopproductoptionvariants",
-    "displayName": "Shop product option variant"
+    "displayName": "Shop product option variant",
+    "singularName": "shop-product-option-variant",
+    "pluralName": "shop-product-option-variants",
+    "tableName": "shop_product_option_variants"
   },
+
   "options": {
     "draftAndPublish": false
   },
@@ -21,13 +23,13 @@
     "medusa_product_variant": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::medusa-product-variant.medusa-product-variant",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product-variant",
       "inversedBy": "options"
     },
     "medusa_product_id": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::medusa-product.medusa-product",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product",
       "inversedBy": "option_variants_id"
     }
   }

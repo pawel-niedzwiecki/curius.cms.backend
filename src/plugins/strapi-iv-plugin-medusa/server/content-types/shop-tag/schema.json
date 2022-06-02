@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "shoptags",
+  "collectionName": "shop_tags",
   "info": {
-    "singularName": "shoptag",
-    "pluralName": "shoptags",
     "displayName": "Shop tag",
-    "description": ""
+    "singularName": "shop-tag",
+    "pluralName": "shop-tags",
+    "tableName": "shop_tags"
   },
   "options": {
     "draftAndPublish": false

@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "shopcollections",
+  "collectionName": "shop_collections",
   "info": {
-    "singularName": "shopcollection",
-    "pluralName": "shopcollections",
     "displayName": "Shop collection",
-    "description": ""
+    "singularName": "shop-collection",
+    "pluralName": "shop-collections",
+    "tableName": "shop_collections"
   },
   "options": {
     "draftAndPublish": false
@@ -37,12 +37,12 @@
       }
     },
 
-    "medusaid": {
+    "medusa_id": {
       "type": "uid",
       "required": true
     },
 
-    "deletedat": {
+    "deleted_at": {
       "type": "datetime",
       "pluginOptions": {
         "i18n": {
@@ -50,10 +50,11 @@
         }
       }
     },
-    "shopproducts": {
+
+    "products": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::medusa-product.medusa-product",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product",
       "mappedBy": "collection"
     }
   }

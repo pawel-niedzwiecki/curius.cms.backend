@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "shopcurrencies",
+  "collectionName": "shop_currencies",
   "info": {
-    "singularName": "shopcurrencie",
-    "pluralName": "shopcurrencies",
     "displayName": "Shop currencie",
-    "description": ""
+    "singularName": "shop-currencie",
+    "pluralName": "shop-currencies",
+    "tableName": "shop_currencies"
   },
   "options": {
     "draftAndPublish": false

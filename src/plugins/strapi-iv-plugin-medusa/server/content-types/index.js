@@ -1,25 +1,25 @@
 "use strict";
 
-const shopcollection = require("./shopcollection");
-const shopcurrencie = require("./shopcurrencie");
-const shopimage = require("./shopimage");
-const shopproduct = require("./shopproduct");
-const shopproductoption = require("./shopproductoption");
-const shopproductoptionvariant = require("./shopproductoptionvariant");
-const shopproductpricesvariant = require("./shopproductpricesvariant");
-const shopproducttype = require("./shopproducttype");
-const shopproductvariant = require("./shopproductvariant");
-const shoptag = require("./shoptag");
+const shopCollection = require("./shop-collection");
+const shopCurrencie = require("./shop-currencie");
+const shopImage = require("./shop-image");
+const shopProduct = require("./shop-product");
+const shopProductOption = require("./shop-product-option");
+const shopProductOptionVariant = require("./shop-product-option-variant");
+const shopProductPriceVariant = require("./shop-product-price-variant");
+const shopProductType = require("./shop-product-type");
+const shopProductVariant = require("./shop-product-variant");
+const shopTag = require("./shop-tag");
 
 module.exports = {
-  shopcollection,
-  shopcurrencie,
-  shopimage,
-  shopproduct,
-  shopproductoption,
-  shopproductoptionvariant,
-  shopproductpricesvariant,
-  shopproducttype,
-  shopproductvariant,
-  shoptag,
+  "shop-collection": shopCollection,
+  "shop-currencie": shopCurrencie,
+  "shop-image": shopImage,
+  "shop-product": shopProduct,
+  "shop-product-option": shopProductOption,
+  "shop-product-option-variant": shopProductOptionVariant,
+  "shop-product-price-variant": shopProductPriceVariant,
+  "shop-product-type": shopProductType,
+  "shop-product-variant": shopProductVariant,
+  "shop-tag": shopTag,
 };
