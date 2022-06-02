@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shopcollections",
+  "info": {
+    "singularName": "shopcollection",
+    "pluralName": "shopcollections",
+    "displayName": "Shop collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "handle": {
+      "type": "uid",
+      "required": false
+    },
+
+    "description": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "medusaid": {
+      "type": "uid",
+      "required": true
+    },
+
+    "deletedat": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "shopproducts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product.medusa-product",
+      "mappedBy": "collection"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shopproducttypes",
+  "info": {
+    "singularName": "shopproducttype",
+    "pluralName": "shopproducttypes",
+    "displayName": "Shop product type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "medusa_id": {
+      "type": "uid",
+      "required": true
+    },
+    "deleted_at": {
+      "type": "datetime"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::medusa-product.medusa-product",
+      "mappedBy": "type"
+    }
+  }
+}
