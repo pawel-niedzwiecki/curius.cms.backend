@@ -8,7 +8,7 @@ import settings from "../../../api/settings";
 const Settings = () => {
   useEffect(() => {
     const test = settings.get();
-    console.log(test.then((d) => console.log(d)));
+    test.then((d) => console.log(d));
   }, []);
 
   return (

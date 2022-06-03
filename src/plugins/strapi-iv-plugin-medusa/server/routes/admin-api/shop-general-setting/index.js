@@ -3,8 +3,8 @@
 module.exports = [
   {
     method: "GET",
-    path: "/setting",
-    handler: "setting.find",
+    path: "/shop-general-setting",
+    handler: "shop-general-setting.find",
     config: {
       policies: ["admin::isAuthenticatedAdmin"],
     },
