@@ -1,8 +1,8 @@
 "use strict";
 
-const menu = require("./menu");
+const setting = require("./setting");
 
 module.exports = {
   type: "admin",
-  routes: [...menu],
+  routes: [...setting],
 };
