@@ -1,8 +1,8 @@
-import { prefixPluginTranslations } from "@strapi/helper-plugin";
-import pluginPkg from "../../package.json";
 import pluginId from "./pluginId";
-import Initializer from "./components/Initializer";
-import PluginIcon from "./components/PluginIcon";
+import pluginPkg from "../../package.json";
+import PluginIcon from "./components/atoms/pluginIcon";
+import Initializer from "./components/atoms/initializer";
+import { prefixPluginTranslations } from "@strapi/helper-plugin";
 
 const name = pluginPkg.strapi.name;
 
@@ -13,7 +13,7 @@ export default {
       icon: PluginIcon,
       intlLabel: {
         id: `${pluginId}.plugin.name`,
-        defaultMessage: `Shop`,
+        defaultMessage: `Shop medusa`,
       },
       Component: async () => {
         const component = await import(/* webpackChunkName: "[request]" */ "./pages/App");
@@ -28,6 +28,41 @@ export default {
         // },
       ],
     });
+
+    app.createSettingSection(
+      {
+        id: pluginId,
+        intlLabel: {
+          id: `${pluginId}.plugin.name`,
+          defaultMessage: "Shop medusa",
+        },
+      },
+      [
+        {
+          intlLabel: {
+            id: `${pluginId}.plugin.name`,
+            defaultMessage: "General settings",
+          },
+          id: "settings",
+          to: `/settings/general/${pluginId}`,
+          Component: async () => {
+            return import("./pages/Settings/General");
+          },
+        },
+        {
+          intlLabel: {
+            id: `${pluginId}.plugin.name`,
+            defaultMessage: "Sync",
+          },
+          id: "settings",
+          to: `/settings/sync/${pluginId}`,
+          Component: async () => {
+            return import("./pages/Settings/Sync");
+          },
+        },
+      ]
+    );
+
     app.registerPlugin({
       id: pluginId,
       initializer: Initializer,
@@ -37,6 +72,7 @@ export default {
   },
 
   bootstrap(app) {},
+
   async registerTrads({ locales }) {
     const importedTrads = await Promise.all(
       locales.map((locale) => {
