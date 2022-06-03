@@ -1,3 +1,4 @@
-import EditAPITokenMedusaServer from "./editAPITokenMedusaServer/component.editAPITokenMedusaServer";
+import ComponentEditURLMedusaServer from "./EditURLMedusaServer/component.editURLMedusaServer";
+import ComponentEditAPITokenMedusaServer from "./editAPITokenMedusaServer/component.editAPITokenMedusaServer";
 
-export { EditAPITokenMedusaServer };
+export { ComponentEditURLMedusaServer, ComponentEditAPITokenMedusaServer };

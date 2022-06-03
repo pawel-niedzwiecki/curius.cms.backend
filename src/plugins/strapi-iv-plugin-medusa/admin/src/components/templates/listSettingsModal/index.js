@@ -1,2 +1,2 @@
-import ListSettingsModal from "./components.index";
-export default ListSettingsModal;
+import ComponentListSettingsModal from "./components.listSettingsModal";
+export default ComponentListSettingsModal;

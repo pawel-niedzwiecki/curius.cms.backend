@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { BaseHeaderLayout } from "@strapi/design-system/Layout";
 
-import ListSettingsModal from "../../../components/templates/listSettingsModal";
+import ComponentListSettingsModal from "../../../components/templates/listSettingsModal";
 
 const Settings = () => {
   return (
@@ -12,7 +12,7 @@ const Settings = () => {
         subtitle="General settings for plugin strapi-iv-plugin-medusa"
         as="h2"
       />
-      <ListSettingsModal data={[{ type: "APITokenMedusaServer" }]} />
+      <ComponentListSettingsModal edit={[{ type: "APITokenMedusaServer" }]} />
     </>
   );
 };

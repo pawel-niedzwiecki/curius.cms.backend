@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "shop_general_settings",
+  "info": {
+    "displayName": "Shop tag",
+    "singularName": "shop-general-setting",
+    "pluralName": "shop-general-settings",
+    "tableName": "shop_general_settings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url_medusa_server": {
+      "type": "string",
+      "required": true
+    },
+    "url_medusa_server_date_modificed": {
+      "type": "datetime",
+      "required": true
+    },
+    "api_token_medusa_server": {
+      "type": "string",
+      "required": true
+    },
+    "api_token_medusa_server_date_modificed": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}
