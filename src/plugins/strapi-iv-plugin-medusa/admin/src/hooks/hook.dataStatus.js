@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export const DirectionStatus = {
+export const dataStatus = {
   pending: "pending",
   resolve: "resolve",
   reject: "reject",
 };
 
 export default function HookDataStatus(status) {
-  const [saveData, setDataStatus] = useState(status ? status : "pending");
+  const [dataStatus, setDataStatus] = useState(status ? status : "pending");
 
-  return { saveData, setDataStatus };
+  return { dataStatus, setDataStatus };
 }

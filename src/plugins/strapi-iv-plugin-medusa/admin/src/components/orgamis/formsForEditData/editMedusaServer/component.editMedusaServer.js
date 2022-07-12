@@ -4,26 +4,24 @@ import { Link } from "@strapi/design-system/v2/Link";
 import { Button } from "@strapi/design-system/Button";
 import { Grid, GridItem } from "@strapi/design-system/Grid";
 import { Field, FieldLabel, FieldInput } from "@strapi/design-system/Field";
-import HookDataStatus, { DirectionStatus } from "../../../../hooks/hook.dataStatus";
+import hookDataStatus, { dataStatus } from "../../../../hooks/hook.dataStatus";
 
 import ComponentAlert from "../../../molecules/alert/component.alert";
 
-export default function ComponentEditURLMedusaServer({ data }) {
-  const [apiToken, setApiToken] = useState(data?.api ? data?.api : "");
-  const [urlMedusaServer, setUrlMedusaServer] = useState(data?.url ? data?.url : "");
-  const { dataStatus, setDataStatus } = HookDataStatus(DirectionStatus.pending);
-  const [dateModificed, setDateModificed] = useState(data?.dateModificed ? data?.dateModificed : null);
+export default function ComponentEditURLMedusaServer() {
+  const [url, setUrl] = useState("");
+  const [token, setToken] = useState("");
+  const [firstTime, setFirstTime] = useState(true);
+  const { status, setStatus } = hookDataStatus(dataStatus.pending);
 
   return (
     <Grid gap={12}>
       <GridItem col={12} paddingTop={4}>
-        {true && <ComponentAlert data={{ status: DirectionStatus.reject, description: "ok" }} />}
-      </GridItem>
-      <GridItem col={12} paddingTop={4}>
-        {true && (
+        {firstTime && (
           <ComponentAlert
             data={{
-              status: DirectionStatus.resolve,
+              callBack: setFirstTime,
+              status: dataStatus.resolve,
               description: "This is your first time 😍 ... add data for medusa.js server and you will happy 😁",
             }}
           />
@@ -43,12 +41,7 @@ export default function ComponentEditURLMedusaServer({ data }) {
                 Where looking url medusa server ?
               </Link>
             </FieldLabel>
-            <FieldInput
-              value={urlMedusaServer}
-              type="text"
-              placeholder="url..."
-              onChange={(e) => setUrlMedusaServer(e.target.value)}
-            />
+            <FieldInput value={url} type="text" placeholder="url..." onChange={(e) => setUrl(e.target.value)} />
           </Stack>
         </Field>
       </GridItem>
@@ -62,12 +55,7 @@ export default function ComponentEditURLMedusaServer({ data }) {
                 Where looking API token ?
               </Link>
             </FieldLabel>
-            <FieldInput
-              value={apiToken}
-              type="text"
-              placeholder="token..."
-              onChange={(e) => setApiToken(e.target.value)}
-            />
+            <FieldInput value={token} type="text" placeholder="token..." onChange={(e) => setToken(e.target.value)} />
           </Stack>
         </Field>
       </GridItem>
