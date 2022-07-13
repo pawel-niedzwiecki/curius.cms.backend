@@ -9,4 +9,12 @@ module.exports = [
       policies: ["admin::isAuthenticatedAdmin"],
     },
   },
+  {
+    method: "PUT",
+    path: "/shop-general-setting",
+    handler: "shop-general-setting.update",
+    config: {
+      policies: ["admin::isAuthenticatedAdmin"],
+    },
+  },
 ];
