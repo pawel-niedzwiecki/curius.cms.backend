@@ -98,7 +98,7 @@ export default function ComponentEditURLMedusaServer() {
                   <Link
                     isExternal
                     style={{ marginLeft: "auto" }}
-                    href="https://docs.medusajs.com/how-to/deploying-on-heroku"
+                    href="https://docs.medusajs.com/deployments/server/deploying-on-heroku"
                   >
                     Where looking url medusa server ?
                   </Link>
