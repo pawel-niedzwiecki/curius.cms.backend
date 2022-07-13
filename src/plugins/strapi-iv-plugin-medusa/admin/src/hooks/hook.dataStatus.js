@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const dataStatus = {
+export const dataStatusEnum = {
   pending: "pending",
   resolve: "resolve",
   reject: "reject",
@@ -9,5 +9,5 @@ export const dataStatus = {
 export default function HookDataStatus(status) {
   const [dataStatus, setDataStatus] = useState(status ? status : "pending");
 
-  return { dataStatus, setDataStatus };
+  return { dataStatus, setDataStatus, dataStatusEnum };
 }
