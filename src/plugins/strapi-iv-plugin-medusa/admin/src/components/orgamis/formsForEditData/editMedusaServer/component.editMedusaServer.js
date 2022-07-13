@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
 import { Stack } from "@strapi/design-system/Stack";
 import { Link } from "@strapi/design-system/v2/Link";
 import { Loader } from "@strapi/design-system/Loader";
 import { Button } from "@strapi/design-system/Button";
 import { Grid, GridItem } from "@strapi/design-system/Grid";
 import axiosInstance from "./../../../../utils/axiosInstance";
+import React, { useState, useEffect, useCallback } from "react";
 import { Field, FieldLabel, FieldInput } from "@strapi/design-system/Field";
 import HookDataStatus, { dataStatusEnum } from "../../../../hooks/hook.dataStatus";
 
@@ -14,6 +14,7 @@ export default function ComponentEditURLMedusaServer() {
   const [url, setUrl] = useState("");
   const [token, setToken] = useState("");
   const [firstTime, setFirstTime] = useState(false);
+  const [saveStatus, setSaveStatus] = useState(false);
   const { dataStatus, setDataStatus } = HookDataStatus(dataStatusEnum.pending);
 
   useEffect(() => {
@@ -30,37 +31,65 @@ export default function ComponentEditURLMedusaServer() {
     })();
   }, []);
 
+  const updateData = useCallback(() => {
+    setDataStatus(dataStatusEnum.pending);
+    (async () => {
+      try {
+        await axiosInstance.put("/strapi-iv-plugin-medusa/shop-general-setting", { apiToken: token, url });
+        setFirstTime(false);
+        setSaveStatus(true);
+        setDataStatus(dataStatusEnum.resolve);
+        setTimeout(() => setSaveStatus(false), 1500);
+      } catch (err) {
+        setDataStatus(dataStatusEnum.reject);
+      }
+    })();
+  }, [url, token]);
+
   return (
     <Grid gap={12}>
       {dataStatus === dataStatusEnum.pending && (
-        <GridItem col={12} padding={4} style={{ display: "flex" }}>
+        <GridItem col={12} paddingBottom={4} style={{ display: "flex", paddingBottom: "4rem", paddingTop: "4rem" }}>
           <Loader style={{ margin: "0 auto" }} />
         </GridItem>
       )}
-      {dataStatus === dataStatusEnum.reject && (
-        <GridItem col={12} paddingTop={4}>
-          <ComponentAlert
-            data={{
-              callBack: setFirstTime,
-              status: dataStatusEnum.reject,
-              description: "Upss...😭 server has problem, try refresh website 👌",
-            }}
-          />
-        </GridItem>
-      )}
+
+      <GridItem col={12}>
+        <ComponentAlert
+          style={{ marginBottom: "1.5rem", marginTop: "1.5rem" }}
+          data={{
+            status: dataStatusEnum.resolve,
+            display: saveStatus,
+            description: "Saved",
+          }}
+        />
+      </GridItem>
+
+      <GridItem col={12}>
+        <ComponentAlert
+          style={{ marginBottom: "1.5rem", marginTop: "1.5rem" }}
+          data={{
+            status: dataStatusEnum.reject,
+            display: dataStatus === dataStatusEnum.reject,
+            description: "Upss...😭 server has problem, try refresh website 👌",
+          }}
+        />
+      </GridItem>
+
+      <GridItem col={12}>
+        <ComponentAlert
+          style={{ marginBottom: "1.5rem", marginTop: "1.5rem" }}
+          data={{
+            status: dataStatusEnum.resolve,
+            callBack: () => setFirstTime(false),
+            display: firstTime && dataStatus === dataStatusEnum.resolve,
+            description: "This is your first time 😍 ... add data for medusa.js server and you will happy 😁",
+          }}
+        />
+      </GridItem>
+
       {dataStatus === dataStatusEnum.resolve && (
         <>
-          <GridItem col={12} paddingTop={4}>
-            {firstTime && (
-              <ComponentAlert
-                data={{
-                  callBack: setFirstTime,
-                  status: dataStatusEnum.resolve,
-                  description: "This is your first time 😍 ... add data for medusa.js server and you will happy 😁",
-                }}
-              />
-            )}
-          </GridItem>
           <GridItem col={12} paddingTop={4}>
             <Field name="urlMedusaServer">
               <Stack spacing={1}>
@@ -97,7 +126,7 @@ export default function ComponentEditURLMedusaServer() {
             </Field>
           </GridItem>
           <GridItem col={12} style={{ display: "flex" }} paddingTop={4}>
-            <Button fullWidth onClick={() => alert("save")}>
+            <Button fullWidth onClick={() => updateData()}>
               Save
             </Button>
           </GridItem>
