@@ -56,7 +56,6 @@ export default function ComponentEditURLMedusaServer() {
 
       <GridItem col={12}>
         <ComponentAlert
-          style={{ marginBottom: "1.5rem", marginTop: "1.5rem" }}
           data={{
             status: dataStatusEnum.resolve,
             display: saveStatus,
@@ -67,7 +66,6 @@ export default function ComponentEditURLMedusaServer() {
 
       <GridItem col={12}>
         <ComponentAlert
-          style={{ marginBottom: "1.5rem", marginTop: "1.5rem" }}
           data={{
             status: dataStatusEnum.reject,
             display: dataStatus === dataStatusEnum.reject,
@@ -78,7 +76,6 @@ export default function ComponentEditURLMedusaServer() {
 
       <GridItem col={12}>
         <ComponentAlert
-          style={{ marginBottom: "1.5rem", marginTop: "1.5rem" }}
           data={{
             status: dataStatusEnum.resolve,
             callBack: () => setFirstTime(false),

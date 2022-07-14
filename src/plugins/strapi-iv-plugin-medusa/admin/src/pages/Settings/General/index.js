@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { BaseHeaderLayout } from "@strapi/design-system/Layout";
 
@@ -6,11 +6,6 @@ import ComponentListSettingsModal from "../../../components/templates/listSettin
 import settings from "../../../api/settings";
 
 const Settings = () => {
-  useEffect(() => {
-    const test = settings.get();
-    test.then((d) => console.log(d));
-  }, []);
-
   return (
     <>
       <BaseHeaderLayout
