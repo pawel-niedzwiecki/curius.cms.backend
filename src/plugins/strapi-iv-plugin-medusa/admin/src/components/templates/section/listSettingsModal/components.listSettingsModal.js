@@ -15,9 +15,9 @@ import { Table, Thead, Tbody, Tr, Td, Th } from "@strapi/design-system/Table";
 import { BaseHeaderLayout, ContentLayout } from "@strapi/design-system/Layout";
 import { ModalLayout, ModalBody, ModalHeader, ModalFooter } from "@strapi/design-system/ModalLayout";
 
-import { ComponentEditMedusaServer } from "../../orgamis/formsForEditData/index";
-import ComponentAlertDataStatus from "../../molecules/alert/component.alert";
-import { DirectionStatus } from "../../../hooks/hook.dataStatus";
+import { ComponentEditMedusaServer } from "../../../orgamis/formsForEditData/index";
+import ComponentAlertDataStatus from "../../../molecules/alert/component.alert";
+import { DirectionStatus } from "../../../../hooks/hook.dataStatus";
 
 export default function ComponentListSettingsModal({ edit }) {
   const [data, setData] = useState(null);

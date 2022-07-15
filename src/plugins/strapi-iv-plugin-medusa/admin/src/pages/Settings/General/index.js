@@ -1,8 +1,8 @@
 import React from "react";
 import { BaseHeaderLayout } from "@strapi/design-system/Layout";
-import ComponentListSettingsModal from "../../../components/templates/listSettingsModal";
+import ComponentListSettingsModal from "../../../components/templates/section/listSettingsModal";
 
-const Settings = () => {
+const SettingsGeneral = () => {
   return (
     <>
       <BaseHeaderLayout
@@ -16,4 +16,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default SettingsGeneral;
