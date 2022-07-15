@@ -1,8 +1,9 @@
 "use strict";
 
+const shopGeneralSettings = require("./shop-general-setting");
+const shopSyncHistorry = require("./shop-sync-historry");
 const shopCollection = require("./shop-collection");
 const shopCurrencie = require("./shop-currencie");
-const shopGeneralSettings = require("./shop-general-setting");
 const shopImage = require("./shop-image");
 const shopProduct = require("./shop-product");
 const shopProductOption = require("./shop-product-option");
@@ -13,9 +14,10 @@ const shopProductVariant = require("./shop-product-variant");
 const shopTag = require("./shop-tag");
 
 module.exports = {
+  "shop-general-setting": shopGeneralSettings,
+  "shop-sync-historry": shopSyncHistorry,
   "shop-collection": shopCollection,
   "shop-currencie": shopCurrencie,
-  "shop-general-setting": shopGeneralSettings,
   "shop-image": shopImage,
   "shop-product": shopProduct,
   "shop-product-option": shopProductOption,

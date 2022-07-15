@@ -60,10 +60,7 @@ export default function ComponentSectionSyncAllData() {
                       </Status>
                       <Button
                         style={{ marginTop: "1.5rem", width: "100%", justifyContent: "center" }}
-                        onClick={() => {
-                          setIsVisible(true);
-                          setSyncStatus(true);
-                        }}
+                        onClick={() => setIsVisible(true)}
                       >
                         Sync now
                       </Button>
@@ -85,7 +82,14 @@ export default function ComponentSectionSyncAllData() {
                         </Button>
                       }
                       endAction={
-                        <Button variant="succes-light" onClick={() => setIsVisible(false)} startIcon={<Play />}>
+                        <Button
+                          variant="succes-light"
+                          onClick={() => {
+                            setIsVisible(false);
+                            setSyncStatus(true);
+                          }}
+                          startIcon={<Play />}
+                        >
                           Start
                         </Button>
                       }
