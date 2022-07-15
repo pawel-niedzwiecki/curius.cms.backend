@@ -3,8 +3,8 @@
 module.exports = [
   {
     method: "GET",
-    path: "/shop-sync-data",
-    handler: "shop-sync-data.syncAll",
+    path: "/shop-sync-data-history",
+    handler: "shop-sync-data-history.allHistory",
     config: {
       policies: ["admin::isAuthenticatedAdmin"],
     },

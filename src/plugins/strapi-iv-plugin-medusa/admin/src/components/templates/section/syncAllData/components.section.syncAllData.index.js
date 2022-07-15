@@ -11,6 +11,7 @@ import { Button } from "@strapi/design-system/Button";
 import { Stack } from "@strapi/design-system/Stack";
 import { BaseCheckbox } from "@strapi/design-system/BaseCheckbox";
 import { Typography } from "@strapi/design-system/Typography";
+import axiosInstance from "./../../../../utils/axiosInstance";
 import { Tabs, Tab, TabGroup, TabPanels, TabPanel } from "@strapi/design-system/Tabs";
 import { EmptyStateLayout } from "@strapi/design-system/EmptyStateLayout";
 import { BaseHeaderLayout, ContentLayout } from "@strapi/design-system/Layout";
@@ -19,8 +20,20 @@ import { Dialog, DialogBody, DialogFooter } from "@strapi/design-system/Dialog";
 import { Table, Thead, Tbody, Tr, Td, Th } from "@strapi/design-system/Table";
 
 export default function ComponentSectionSyncAllData() {
+  const [history, setHistory] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [syncStatus, setSyncStatus] = useState(false);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await axiosInstance.get("/strapi-iv-plugin-medusa/shop-sync-data-history");
+        setHistory(res.data);
+      } catch (err) {}
+    })();
+  }, []);
+
+  console.log(history);
 
   const entry = {
     description: "succes",
@@ -108,19 +121,40 @@ export default function ComponentSectionSyncAllData() {
                         <Th>
                           <Typography variant="sigma">Status</Typography>
                         </Th>
+                        <Th>
+                          <Typography variant="sigma">type</Typography>
+                        </Th>
+                        <Th>
+                          <Typography variant="sigma">create</Typography>
+                        </Th>
+                        <Th>
+                          <Typography variant="sigma">update</Typography>
+                        </Th>
                       </Tr>
                     </Thead>
                     <Tbody>
-                      {entries.map((entry) => (
-                        <Tr key={entry.id}>
-                          <Td>
-                            <Typography textColor="neutral800">{entry.id}</Typography>
-                          </Td>
-                          <Td>
-                            <Typography textColor="neutral800">{entry.description}</Typography>
-                          </Td>
-                        </Tr>
-                      ))}
+                      {history?.data?.length &&
+                        history?.data?.map((entry) => {
+                          return (
+                            <Tr key={entry.id}>
+                              <Td>
+                                <Typography textColor="neutral800">{entry.id}</Typography>
+                              </Td>
+                              <Td>
+                                <Typography textColor="neutral800">{entry.status}</Typography>
+                              </Td>
+                              <Td>
+                                <Typography textColor="neutral800">{entry.type}</Typography>
+                              </Td>
+                              <Td>
+                                <Typography textColor="neutral800">{entry.createdAt}</Typography>
+                              </Td>
+                              <Td>
+                                <Typography textColor="neutral800">{entry.updatedAt}</Typography>
+                              </Td>
+                            </Tr>
+                          );
+                        })}
                     </Tbody>
                   </Table>
                 </Box>
