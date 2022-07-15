@@ -16,16 +16,8 @@
       "type": "string",
       "required": true
     },
-    "url_medusa_server_date_modificed": {
-      "type": "datetime",
-      "required": true
-    },
     "api_token_medusa_server": {
       "type": "string",
-      "required": true
-    },
-    "api_token_medusa_server_date_modificed": {
-      "type": "datetime",
       "required": true
     }
   }
