@@ -15,6 +15,10 @@
     "status": {
       "type": "enumeration",
       "enum": ["pending", "resolve", "reject"]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["all"]
     }
   }
 }
