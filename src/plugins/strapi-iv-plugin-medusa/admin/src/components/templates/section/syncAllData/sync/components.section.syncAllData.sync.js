@@ -21,20 +21,9 @@ import { Table, Thead, Tbody, Tr, Td, Th } from "@strapi/design-system/Table";
 
 import { dataStatusEnum } from "../../../../hooks/hook.dataStatus";
 
-import ComponentTabForHistory from "./history/components.section.syncAllData.history";
-
 export default function ComponentSectionSyncAllData() {
   const [isVisible, setIsVisible] = useState(false);
   const [syncStatus, setSyncStatus] = useState(false);
-
-  const entry = {
-    description: "succes",
-  };
-  const entries = [];
-
-  for (let i = 0; i < 5; i++) {
-    entries.push({ ...entry, id: i });
-  }
 
   return (
     <>
@@ -102,7 +91,61 @@ export default function ComponentSectionSyncAllData() {
                   </Dialog>
                 </Box>
               </TabPanel>
-              <ComponentTabForHistory />
+              <TabPanel>
+                <Box color="neutral800" padding={4} background="neutral0">
+                  {historyStatus === dataStatusEnum.pending ? (
+                    <Loader style={{ margin: "1.5rem auto", display: "flex", justifyContent: "center" }} />
+                  ) : historyStatus === dataStatusEnum.reject ? (
+                    "Upss..."
+                  ) : (
+                    <Table>
+                      <Thead>
+                        <Tr>
+                          <Th>
+                            <Typography variant="sigma">ID</Typography>
+                          </Th>
+                          <Th>
+                            <Typography variant="sigma">Status</Typography>
+                          </Th>
+                          <Th>
+                            <Typography variant="sigma">type</Typography>
+                          </Th>
+                          <Th>
+                            <Typography variant="sigma">create</Typography>
+                          </Th>
+                          <Th>
+                            <Typography variant="sigma">update</Typography>
+                          </Th>
+                        </Tr>
+                      </Thead>
+                      <Tbody>
+                        {!!history?.data?.length &&
+                          history.data.map((entry) => {
+                            return (
+                              <Tr key={entry.id}>
+                                <Td>
+                                  <Typography textColor="neutral800">{entry.id}</Typography>
+                                </Td>
+                                <Td>
+                                  <Typography textColor="neutral800">{entry.status}</Typography>
+                                </Td>
+                                <Td>
+                                  <Typography textColor="neutral800">{entry.type}</Typography>
+                                </Td>
+                                <Td>
+                                  <Typography textColor="neutral800">{entry.createdAt}</Typography>
+                                </Td>
+                                <Td>
+                                  <Typography textColor="neutral800">{entry.updatedAt}</Typography>
+                                </Td>
+                              </Tr>
+                            );
+                          })}
+                      </Tbody>
+                    </Table>
+                  )}
+                </Box>
+              </TabPanel>
             </TabPanels>
           </TabGroup>
         </Box>

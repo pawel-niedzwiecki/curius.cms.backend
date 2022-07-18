@@ -21,6 +21,7 @@ export default function ComponentEditURLMedusaServer() {
     (async () => {
       try {
         const res = await axiosInstance.get("/strapi-iv-plugin-medusa/shop-general-setting");
+
         if (!!res?.data?.url_medusa_server) setUrl(res.data.url_medusa_server);
         if (!!res?.data?.api_token_medusa_server) setToken(res.data.api_token_medusa_server);
         if (!res?.data?.url_medusa_server?.length || !res?.data?.api_token_medusa_server?.length) setFirstTime(true);
