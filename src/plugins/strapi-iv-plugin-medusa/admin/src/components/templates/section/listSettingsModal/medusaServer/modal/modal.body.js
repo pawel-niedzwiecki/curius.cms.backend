@@ -3,14 +3,14 @@ import { Link } from "@strapi/design-system/v2/Link";
 import { Loader } from "@strapi/design-system/Loader";
 import { Button } from "@strapi/design-system/Button";
 import { Grid, GridItem } from "@strapi/design-system/Grid";
-import axiosInstance from "./../../../../utils/axiosInstance";
+import axiosInstance from "./../../../../../../utils/axiosInstance";
 import React, { useState, useEffect, useCallback } from "react";
 import { Field, FieldLabel, FieldInput } from "@strapi/design-system/Field";
-import HookDataStatus, { dataStatusEnum } from "../../../../hooks/hook.dataStatus";
+import HookDataStatus, { dataStatusEnum } from "./../../../../../../hooks/hook.dataStatus";
 
-import ComponentAlert from "../../../molecules/alert/component.alert";
+import ComponentAlert from "./../../../../../molecules/alert/component.alert";
 
-export default function ComponentEditURLMedusaServer() {
+export default function Modal() {
   const [url, setUrl] = useState("");
   const [token, setToken] = useState("");
   const [firstTime, setFirstTime] = useState(false);

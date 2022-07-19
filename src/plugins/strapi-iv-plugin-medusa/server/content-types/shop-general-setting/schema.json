@@ -13,12 +13,10 @@
   "pluginOptions": {},
   "attributes": {
     "url_medusa_server": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "api_token_medusa_server": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "more_important_data": {
       "type": "enumeration",
