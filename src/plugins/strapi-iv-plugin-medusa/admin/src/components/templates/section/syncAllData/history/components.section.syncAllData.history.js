@@ -38,7 +38,7 @@ export default function ComponentTabForHistory() {
               Upss...😭 server has problem, try refresh website 👌
             </Typography>
           </Status>
-        ) : (
+        ) : !!history?.data?.length ? (
           <Table>
             <Thead>
               <Tr>
@@ -84,6 +84,12 @@ export default function ComponentTabForHistory() {
                 })}
             </Tbody>
           </Table>
+        ) : (
+          <Status variant="success">
+            <Typography style={{ display: "flex", alignItems: "center" }}>
+              It is your first time 😍 So you don't have sync history
+            </Typography>
+          </Status>
         )}
       </Box>
     </TabPanel>
