@@ -46,6 +46,16 @@ export default function ComponentListSettingsModal({ edit }) {
                 </Flex>
               </Td>
             </Tr>
+            <Tr>
+              <Td>
+                <Typography variant="beta">General</Typography>
+              </Td>
+              <Td>
+                <Flex justifyContent="flex-end">
+                  <IconButton noBorder icon={<Pencil />} aria-label="Edit" onClick={() => setIsVisible(true)} />
+                </Flex>
+              </Td>
+            </Tr>
           </Tbody>
         </Table>
       </ContentLayout>{" "}

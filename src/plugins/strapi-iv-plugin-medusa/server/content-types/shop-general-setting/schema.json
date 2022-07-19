@@ -22,7 +22,8 @@
     },
     "more_important_data": {
       "type": "enumeration",
-      "enum": ["Medusa.js", "Strapi.js"]
+      "enum": ["Medusa.js", "Strapi.js"],
+      "default": "Medusa.js"
     }
   }
 }
