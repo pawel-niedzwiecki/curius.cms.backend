@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "@strapi/design-system/Box";
 import { Loader } from "@strapi/design-system/Loader";
+import { TabPanel } from "@strapi/design-system/Tabs";
+import { Status } from "@strapi/design-system/Status";
 import { Typography } from "@strapi/design-system/Typography";
 import axiosInstance from "./../../../../../utils/axiosInstance";
 import { dataStatusEnum } from "../../../../../hooks/hook.dataStatus";
@@ -8,8 +10,6 @@ import { Table, Thead, Tbody, Tr, Td, Th } from "@strapi/design-system/Table";
 import { BaseHeaderLayout, ContentLayout } from "@strapi/design-system/Layout";
 import { IconButton, IconButtonGroup } from "@strapi/design-system/IconButton";
 import { Dialog, DialogBody, DialogFooter } from "@strapi/design-system/Dialog";
-import { TabPanel } from "@strapi/design-system/Tabs";
-import { Status } from "@strapi/design-system/Status";
 
 export default function ComponentTabForHistory() {
   const [history, setHistory] = useState({ data: null });

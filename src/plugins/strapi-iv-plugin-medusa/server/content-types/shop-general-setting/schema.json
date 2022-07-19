@@ -19,6 +19,10 @@
     "api_token_medusa_server": {
       "type": "string",
       "required": true
+    },
+    "more_important_data": {
+      "type": "enumeration",
+      "enum": ["Medusa.js", "Strapi.js"]
     }
   }
 }
