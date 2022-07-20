@@ -6,11 +6,11 @@ module.exports = {
   },
 
   async update(ctx) {
-    const { apiToken, url } = ctx.request.body;
+    const { apiToken, url, importantData } = ctx.request.body;
 
     ctx.body = await strapi
       .plugin("strapi-iv-plugin-medusa")
       .service("shop-general-setting")
-      .updateSettings(apiToken, url);
+      .updateSettings(apiToken, url, importantData);
   },
 };

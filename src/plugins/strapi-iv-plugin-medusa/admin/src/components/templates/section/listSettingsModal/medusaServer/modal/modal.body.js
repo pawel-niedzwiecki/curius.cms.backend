@@ -11,8 +11,15 @@ import HookDataStatus, { dataStatusEnum } from "./../../../../../../hooks/hook.d
 import ComponentAlert from "./../../../../../molecules/alert/component.alert";
 
 export default function Modal() {
-  const [url, setUrl] = useState("");
-  const [token, setToken] = useState("");
+  const [data, setData] = useState({
+    id: 1,
+    createdAt: null,
+    updatedAt: null,
+    url_medusa_server: null,
+    api_token_medusa_server: null,
+    more_important_data: "Medusa.js",
+  });
+
   const [firstTime, setFirstTime] = useState(false);
   const [saveStatus, setSaveStatus] = useState(false);
   const { dataStatus, setDataStatus } = HookDataStatus(dataStatusEnum.pending);
@@ -22,9 +29,8 @@ export default function Modal() {
       try {
         const res = await axiosInstance.get("/strapi-iv-plugin-medusa/shop-general-setting");
 
-        if (!!res?.data?.url_medusa_server) setUrl(res.data.url_medusa_server);
-        if (!!res?.data?.api_token_medusa_server) setToken(res.data.api_token_medusa_server);
-        if (!res?.data?.url_medusa_server?.length || !res?.data?.api_token_medusa_server?.length) setFirstTime(true);
+        setData(res.data);
+        if (!res?.data?.createdAt) setFirstTime(true);
         setDataStatus(dataStatusEnum.resolve);
       } catch (err) {
         setDataStatus(dataStatusEnum.reject);
@@ -36,7 +42,11 @@ export default function Modal() {
     setDataStatus(dataStatusEnum.pending);
     (async () => {
       try {
-        await axiosInstance.put("/strapi-iv-plugin-medusa/shop-general-setting", { apiToken: token, url });
+        await axiosInstance.put("/strapi-iv-plugin-medusa/shop-general-setting", {
+          url: data.url_medusa_server,
+          apiToken: data.api_token_medusa_server,
+          importantData: data.more_important_data,
+        });
         setFirstTime(false);
         setSaveStatus(true);
         setDataStatus(dataStatusEnum.resolve);
@@ -45,7 +55,7 @@ export default function Modal() {
         setDataStatus(dataStatusEnum.reject);
       }
     })();
-  }, [url, token]);
+  }, [data]);
 
   return (
     <Grid gap={12}>
@@ -101,7 +111,12 @@ export default function Modal() {
                     Where looking url medusa server ?
                   </Link>
                 </FieldLabel>
-                <FieldInput value={url} type="text" placeholder="url..." onChange={(e) => setUrl(e.target.value)} />
+                <FieldInput
+                  type="text"
+                  placeholder="url..."
+                  value={data.url_medusa_server}
+                  onChange={(e) => setData({ ...data, url_medusa_server: e.target.value })}
+                />
               </Stack>
             </Field>
           </GridItem>
@@ -115,10 +130,10 @@ export default function Modal() {
                   </Link>
                 </FieldLabel>
                 <FieldInput
-                  value={token}
                   type="text"
                   placeholder="token..."
-                  onChange={(e) => setToken(e.target.value)}
+                  value={data.api_token_medusa_server}
+                  onChange={(e) => setData({ ...data, api_token_medusa_server: e.target.value })}
                 />
               </Stack>
             </Field>
