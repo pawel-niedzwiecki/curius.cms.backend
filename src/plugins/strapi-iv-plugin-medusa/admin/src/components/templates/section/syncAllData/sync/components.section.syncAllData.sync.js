@@ -25,6 +25,8 @@ export default function ComponentSectionSyncAllData() {
   const [history, setHistory] = useState({ data: [] });
   const [syncStatus, setSyncStatus] = useState(dataStatusEnum.pending);
 
+  console.log(history);
+
   useEffect(() => {
     (async () => {
       try {
@@ -40,7 +42,12 @@ export default function ComponentSectionSyncAllData() {
   const syncData = async () => {
     setIsOpen(false);
     setSyncStatus(dataStatusEnum.pending);
-    alert("start");
+    try {
+      const res = await axiosInstance.get("/strapi-iv-plugin-medusa/shop-sync-data");
+      console.log(res.data);
+    } catch (err) {
+      setSyncStatus(dataStatusEnum.reject);
+    }
   };
 
   return (
