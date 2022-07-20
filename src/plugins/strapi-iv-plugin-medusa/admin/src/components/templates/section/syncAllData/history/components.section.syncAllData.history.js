@@ -29,7 +29,7 @@ export default function ComponentTabForHistory() {
 
   return (
     <TabPanel>
-      <Box color="neutral800" padding={4} background="neutral0">
+      <Box color="neutral800" paddingTop={4} background="neutral0">
         {historyStatus === dataStatusEnum.pending ? (
           <Loader style={{ margin: "1.5rem auto", display: "flex", justifyContent: "center" }} />
         ) : historyStatus === dataStatusEnum.reject ? (

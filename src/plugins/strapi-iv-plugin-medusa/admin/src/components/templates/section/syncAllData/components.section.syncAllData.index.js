@@ -22,20 +22,9 @@ import { Table, Thead, Tbody, Tr, Td, Th } from "@strapi/design-system/Table";
 import { dataStatusEnum } from "../../../../hooks/hook.dataStatus";
 
 import ComponentTabForHistory from "./history/components.section.syncAllData.history";
+import ComponentTabForSyncData from "./sync/components.section.syncAllData.sync";
 
 export default function ComponentSectionSyncAllData() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [syncStatus, setSyncStatus] = useState(false);
-
-  const entry = {
-    description: "succes",
-  };
-  const entries = [];
-
-  for (let i = 0; i < 5; i++) {
-    entries.push({ ...entry, id: i });
-  }
-
   return (
     <>
       <BaseHeaderLayout title="Sync" subtitle="You cann sync all data now with medusa serwer" as="h2" />
@@ -47,61 +36,7 @@ export default function ComponentSectionSyncAllData() {
               <Tab>History</Tab>
             </Tabs>
             <TabPanels>
-              <TabPanel>
-                <Box color="neutral800" paddingTop={4} background="neutral0">
-                  {syncStatus ? (
-                    <Status variant="warning">
-                      <Typography style={{ display: "flex", alignItems: "center" }}>
-                        <Loader small style={{ marginRight: "0.6rem", display: "flex" }} />I sync data with medusa
-                        server...
-                      </Typography>
-                    </Status>
-                  ) : (
-                    <>
-                      <Status variant="success">
-                        <Typography>
-                          Last sync <Typography fontWeight="bold">22/01/2022</Typography>
-                        </Typography>
-                      </Status>
-                      <Button
-                        style={{ marginTop: "1.5rem", width: "100%", justifyContent: "center" }}
-                        onClick={() => setIsVisible(true)}
-                      >
-                        Sync now
-                      </Button>
-                    </>
-                  )}
-
-                  <Dialog onClose={() => setIsVisible(false)} title="Confirmation" isOpen={isVisible}>
-                    <DialogBody icon={<ExclamationMarkCircle />}>
-                      <Stack spacing={2}>
-                        <Flex justifyContent="center">
-                          <Typography id="confirm-description">Are you sure, you want to sync now?</Typography>
-                        </Flex>
-                      </Stack>
-                    </DialogBody>
-                    <DialogFooter
-                      startAction={
-                        <Button onClick={() => setIsVisible(false)} variant="tertiary">
-                          Cancel
-                        </Button>
-                      }
-                      endAction={
-                        <Button
-                          variant="succes-light"
-                          onClick={() => {
-                            setIsVisible(false);
-                            setSyncStatus(true);
-                          }}
-                          startIcon={<Play />}
-                        >
-                          Start
-                        </Button>
-                      }
-                    />
-                  </Dialog>
-                </Box>
-              </TabPanel>
+              <ComponentTabForSyncData />
               <ComponentTabForHistory />
             </TabPanels>
           </TabGroup>
