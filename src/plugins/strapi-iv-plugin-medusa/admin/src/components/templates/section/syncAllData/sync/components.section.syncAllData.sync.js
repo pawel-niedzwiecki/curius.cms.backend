@@ -25,8 +25,6 @@ export default function ComponentSectionSyncAllData() {
   const [history, setHistory] = useState({ data: [] });
   const [syncStatus, setSyncStatus] = useState(dataStatusEnum.pending);
 
-  console.log(history);
-
   useEffect(() => {
     (async () => {
       try {
