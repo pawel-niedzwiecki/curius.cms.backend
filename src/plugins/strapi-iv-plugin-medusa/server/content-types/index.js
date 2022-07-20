@@ -1,6 +1,7 @@
 "use strict";
 
 const shopGeneralSettings = require("./shop-general-setting");
+const shopSyncStatus = require("./shop-sync-status");
 const shopSyncHistorry = require("./shop-sync-historry");
 const shopCollection = require("./shop-collection");
 const shopCurrencie = require("./shop-currencie");
@@ -15,6 +16,7 @@ const shopTag = require("./shop-tag");
 
 module.exports = {
   "shop-general-setting": shopGeneralSettings,
+  "shop-sync-status": shopSyncStatus,
   "shop-sync-historry": shopSyncHistorry,
   "shop-collection": shopCollection,
   "shop-currencie": shopCurrencie,
