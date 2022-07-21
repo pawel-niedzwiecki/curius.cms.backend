@@ -6,12 +6,11 @@ module.exports = {
       .query("plugin::strapi-iv-plugin-medusa.shop-sync-historry")
       .findMany({ where: { status: "pending" } });
 
-    if (!!syncNowWorking.length) return { status: "pending" };
+    if (!syncNowWorking.length)
+      await strapi
+        .query("plugin::strapi-iv-plugin-medusa.shop-sync-historry")
+        .create({ data: { status: "pending", type: "all" } });
 
-    const createHistory = await strapi
-      .query("plugin::strapi-iv-plugin-medusa.shop-sync-historry")
-      .create({ data: { status: "pending", type: "all" } });
-
-    return { ok: "pl" };
+    return { status: "pending" };
   },
 };

@@ -1,4 +1,4 @@
-"use strict";
+("use strict");
 
 module.exports = {
   async getSettings() {
@@ -7,7 +7,7 @@ module.exports = {
 
   async updateSettings(apiToken, url, importantData) {
     const tryDoesExsist = await strapi.query("plugin::strapi-iv-plugin-medusa.shop-general-setting").findMany();
-    console.log(importantData, "kupa");
+
     if (!!tryDoesExsist.length)
       await strapi
         .query("plugin::strapi-iv-plugin-medusa.shop-general-setting")
