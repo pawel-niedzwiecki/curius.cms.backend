@@ -28,9 +28,9 @@ export default function Modal() {
       try {
         const res = await axiosInstance.get("/strapi-iv-plugin-medusa/shop-general-setting");
         setData(res.data);
-        if (!res?.data?.createdAt) setFirstTime(true);
         setDataStatus(dataStatusEnum.resolve);
       } catch (err) {
+        console.log(err, "err");
         setDataStatus(dataStatusEnum.reject);
       }
     })();
@@ -101,9 +101,7 @@ export default function Modal() {
                   <Option value={"Medusa.js"} default>
                     Medusa.js
                   </Option>
-                  <Option value={"Strapi.js"} default>
-                    Strapi.js
-                  </Option>
+                  <Option value={"Strapi.js"}>Strapi.js</Option>
                 </Select>
               </Stack>
             </Field>
