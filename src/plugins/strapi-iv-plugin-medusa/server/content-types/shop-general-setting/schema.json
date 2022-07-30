@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "shop_general_settings",
+  "info": {
+    "displayName": "Shop general setting",
+    "singularName": "shop-general-setting",
+    "pluralName": "shop-general-settings",
+    "tableName": "shop_general_settings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url_medusa_server": {
+      "type": "string"
+    },
+    "api_token_medusa_server": {
+      "type": "string"
+    },
+    "more_important_data": {
+      "type": "enumeration",
+      "enum": ["Medusa.js", "Strapi.js"],
+      "default": "Medusa.js"
+    }
+  }
+}

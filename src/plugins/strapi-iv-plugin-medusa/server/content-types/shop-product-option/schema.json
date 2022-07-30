@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_product_options",
+  "info": {
+    "displayName": "Shop product option",
+    "singularName": "shop-product-option",
+    "pluralName": "shop-product-options",
+    "tableName": "shop_product_options"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "medusa_id": {
+      "type": "uid",
+      "required": true
+    },
+    "product_id": {
+      "type": "uid",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product",
+      "inversedBy": "options"
+    }
+  }
+}

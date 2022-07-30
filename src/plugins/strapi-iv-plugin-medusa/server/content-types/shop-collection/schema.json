@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_collections",
+  "info": {
+    "displayName": "Shop collection",
+    "singularName": "shop-collection",
+    "pluralName": "shop-collections",
+    "tableName": "shop_collections"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "handle": {
+      "type": "uid",
+      "required": false
+    },
+
+    "description": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "medusa_id": {
+      "type": "uid",
+      "required": true
+    },
+
+    "deleted_at": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::strapi-iv-plugin-medusa.shop-product",
+      "mappedBy": "collection"
+    }
+  }
+}

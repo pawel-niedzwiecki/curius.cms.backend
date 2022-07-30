@@ -10,9 +10,12 @@ module.exports = ({ env }) => ({
       database: config.database,
       user: config.user,
       password: config.password,
-      ssl: {
-        rejectUnauthorized: false,
-      },
+      ssl:
+        env("NODE_ENV") === "develop"
+          ? false
+          : {
+              rejectUnauthorized: false,
+            },
     },
     debug: false,
   },

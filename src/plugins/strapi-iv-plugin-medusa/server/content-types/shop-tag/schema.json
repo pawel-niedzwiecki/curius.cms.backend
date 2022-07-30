@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_tags",
+  "info": {
+    "displayName": "Shop tag",
+    "singularName": "shop-tag",
+    "pluralName": "shop-tags",
+    "tableName": "shop_tags"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "medusa_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "required": true
+    },
+    "deleted_at": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime"
+    }
+  }
+}

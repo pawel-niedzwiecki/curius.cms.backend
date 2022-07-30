@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_images",
+  "info": {
+    "displayName": "Shop image",
+    "singularName": "shop-image",
+    "pluralName": "shop-images",
+    "tableName": "shop_images"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "uid",
+      "required": true
+    },
+    "medusaid": {
+      "type": "uid",
+      "required": true
+    },
+    "deletedat": {
+      "type": "datetime"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shop_sync_historrys",
+  "info": {
+    "displayName": "Shop sync historry",
+    "singularName": "shop-sync-historry",
+    "pluralName": "shop-sync-historrys",
+    "tableName": "shop_sync_historrys"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "resolve", "reject"]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["all"]
+    }
+  }
+}

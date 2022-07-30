@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "shop_sync_statuses",
+  "info": {
+    "singularName": "shop-sync-status",
+    "pluralName": "shop-sync-statuses",
+    "displayName": "Shop sync status",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collection": {
+      "pluginOptions": {},
+      "type": "json",
+      "required": false
+    },
+    "product": {
+      "pluginOptions": {},
+      "type": "json"
+    },
+    "product_vairant": {
+      "pluginOptions": {},
+      "type": "json"
+    },
+    "product_type": {
+      "pluginOptions": {},
+      "type": "json"
+    },
+    "currencie": {
+      "type": "json"
+    },
+    "tag": {
+      "type": "json"
+    }
+  }
+}
