@@ -12,19 +12,19 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.1.12",
-    "@strapi/plugin-users-permissions": "4.1.12",
-    "@strapi/plugin-i18n": "4.1.12",
+    "@strapi/strapi": "4.3.0",
+    "@strapi/plugin-users-permissions": "4.3.0",
+    "@strapi/plugin-i18n": "4.3.0",
     "pg": "8.6.0"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "0cb16dd3-2f4c-4fcd-8b17-ff70990f2465"
+    "uuid": "aa088685-d820-4223-b39e-5faeed9bb9f9"
   },
   "engines": {
-    "node": ">=12.x.x <=16.x.x",
+    "node": ">=14.19.1 <=16.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
